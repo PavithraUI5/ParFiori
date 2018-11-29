@@ -1,0 +1,58 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:head="cn.par.customControls">
+	<List items="{/facial}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Facial"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/bleach}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Bleach"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/threading}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Threading"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/detaning}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Detaning"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/hairCut}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Hair Cut"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/hairTreatment}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Hair Treatment and Styling"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+	<List items="{/waxing}">
+		<headerToolbar>
+			<Toolbar design="Solid">
+				<head:Heading myText="Waxing"></head:Heading>
+			</Toolbar>
+		</headerToolbar>
+		<ObjectListItem icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+	</List>
+</core:FragmentDefinition>

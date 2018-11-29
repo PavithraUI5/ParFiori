@@ -1,0 +1,33 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="cn.par.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Master View">
+		<content>
+			<IconTabBar>
+				<items>
+					<IconTabFilter text="Home" icon=""></IconTabFilter>
+					<IconTabFilter text="New Registration" icon="">
+						<core:Fragment fragmentName="cn.par.fragments.Registration" type="XML"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter text="View Choices" icon="">
+						<core:Fragment fragmentName="cn.par.fragments.Choices" type="XML"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter text="Book an appointment" icon="">
+						<core:Fragment fragmentName="cn.par.fragments.Appointment" type="XML"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter text="Buy Products" icon="">
+						<!--<core:Fragment fragmentName="" type="XML"></core:Fragment>-->
+					</IconTabFilter>
+					<IconTabFilter text="Inquiry" icon="">
+						<!--<core:Fragment fragmentName="" type="XML"></core:Fragment>-->
+					</IconTabFilter>
+					<IconTabFilter text="Feedback" icon="">
+						<!--<core:Fragment fragmentName="" type="XML"></core:Fragment>-->
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<!--<List items="{/listData}" itemPress="onItemPress">
+					<ObjectListItem type="Navigation" title="{name}" icon="{myIcon}"></ObjectListItem>
+			</List>-->
+		</content>
+	</Page>
+</mvc:View>

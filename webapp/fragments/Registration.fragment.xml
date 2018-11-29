@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<form:SimpleForm editable="true">
+		<Label text="Name" required="true" textAlign="Center" width="200px"></Label>
+		<Input value="" width="200px"></Input>
+		<Label text="Email ID" required="true" width="200px"></Label>
+		<Input type="Email" value="" width="200px"></Input>
+		<Label text="Password" required="true" width="200px"></Label>
+		<Input type="Password" value="" width="200px"></Input>
+		<Label text="Age"></Label>
+		<Input value="" width="200px"></Input>
+		<Label text="Phone No" required="true" width="200px"></Label>
+		<Input value="" width="200px"></Input>
+		<Label text="Address" width="200px"></Label>
+		<Input value="" width="200px"></Input>
+		<Label text="Nationality" width="200px"></Label>
+		<Input value="" width="200px"></Input>
+		<Label text="How did you get to know about this Salon?" required="true" width="200px"></Label>
+		<Select selectedKey="{/arrivalStruct/name}" items="{/arrival}" width="200px">
+			<core:Item key="{name}" text="{value}"></core:Item>
+		</Select>
+		<Label text="If Others, please mention here" width="200px"></Label>
+		<Input enabled="{= ${/arrivalStruct/name} === 'Others' ? true : false}" width="200px"></Input>
+	</form:SimpleForm>
+</core:FragmentDefinition>

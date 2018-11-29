@@ -1,0 +1,89 @@
+{
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_bluecrystal"],
+		"icons": {
+			"icon": "sap-icon://basket",
+			"phone": "sap-icon://basket",
+			"phone@2": "sap-icon://basket",
+			"tablet": "sap-icon://basket",
+			"tablet@2": "sap-icon://basket",
+			"favIcon": "sap-icon://basket"
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"dependencies": {
+			"minUI5Version": "1.44",
+			"libs": {
+				"sap.m": {
+					"minVersion": "1.44"
+				},
+				"sap.ui.core": {
+					"minVersion": "1.44"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"rootView": {
+			"viewName": "cn.par.view.App",
+			"type": "XML"
+		},
+		"routing": {
+			"config": {
+				"viewPath": "cn.par.view",
+				"controlId": "myApp",
+				"viewType": "XML",
+				"routerClass": "sap.m.routing.Router"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": ["masterView"]
+			}],
+			"targets": {
+				"masterView": {
+					"viewName": "Main",
+					"viewId": "idMain",
+					"controlAggregation": "pages",
+					"viewLevel": 1
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"uri": "/webapp/i18n/i18n.properties",
+				"type": "sap.ui.model.resource.ResourceModel"
+			},
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/webapp/models/data/internalInfo.json",
+				"preload": true
+			}
+		}
+	},
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "cn.par",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{TITLE}}",
+		"description": "{{DESCRIPTION}}",
+		"tags": {
+			"keywords": ["{{SALON}}", "{{BEAUTY}}"]
+		},
+		"ach": "SD"
+	},
+	"_version": "1.6.0"
+}
