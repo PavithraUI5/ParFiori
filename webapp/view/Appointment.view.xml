@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="cn.par.controller.Appointment"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
+	<Page title="Book an Appointment" showNavButton="true" navButtonTooltip="Back" navButtonPress="onBackBtn">
+		<content>
+			<form:SimpleForm id="idSimpleForm">
+				<Label text="Date of appointment"></Label>
+				<DatePicker width="200px"></DatePicker>
+				<Label text="Time"></Label>
+				<TimePicker width="150px" displayFormat="HH:mm"></TimePicker>
+				<Label text="Total amount"></Label>
+				<Input id="idAmount" enabled="false" width="200px"></Input>
+			</form:SimpleForm>
+			<Toolbar style="Clear">
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="Proceed to payment?" type="Accept" tooltip="Proceed?"></Button>
+			</Toolbar>
+		</content>
+	</Page>
+</mvc:View>

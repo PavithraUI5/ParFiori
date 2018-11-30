@@ -49,6 +49,10 @@
 				"pattern": "",
 				"name": "master",
 				"target": ["masterView"]
+			},{
+				"pattern" : "BookAppointment/{Amount}/{Currency}",
+				"name" : "appointment",
+				"target" : ["appointmentView"] 
 			}],
 			"targets": {
 				"masterView": {
@@ -56,6 +60,12 @@
 					"viewId": "idMain",
 					"controlAggregation": "pages",
 					"viewLevel": 1
+				},
+				"appointmentView" : {
+					"viewName": "Appointment",
+					"viewId" : "idAppointment",
+					"controlAggregation" : "pages",
+					"viewLevel" : 2
 				}
 			}
 		},

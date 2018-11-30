@@ -11,11 +11,8 @@
 					<IconTabFilter text="View Choices" icon="">
 						<core:Fragment fragmentName="cn.par.fragments.Choices" type="XML"></core:Fragment>
 					</IconTabFilter>
-					<IconTabFilter text="Book an appointment" icon="">
-						<core:Fragment fragmentName="cn.par.fragments.Appointment" type="XML"></core:Fragment>
-					</IconTabFilter>
 					<IconTabFilter text="Buy Products" icon="">
-						<!--<core:Fragment fragmentName="" type="XML"></core:Fragment>-->
+						<!--<core:Fragment fragmentName="cn.par.fragments.Product" type="XML"></core:Fragment>-->
 					</IconTabFilter>
 					<IconTabFilter text="Inquiry" icon="">
 						<!--<core:Fragment fragmentName="" type="XML"></core:Fragment>-->
