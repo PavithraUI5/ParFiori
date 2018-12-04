@@ -21,4 +21,8 @@
 		<Label text="If Others, please mention here" width="200px"></Label>
 		<Input enabled="{= ${/arrivalStruct/name} === 'Others' ? true : false}" width="200px"></Input>
 	</form:SimpleForm>
+	<Toolbar style="Clear">
+		<ToolbarSpacer></ToolbarSpacer>
+		<Button text="Register" type="Emphasized" press="onPressRegister"></Button>
+	</Toolbar>
 </core:FragmentDefinition>

@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Table mode="MultiSelect" alternateRowColors="true" selectionChange="onSelectionProducts">
+		<columns>
+			<Column>
+				<Text text="Product"></Text>
+			</Column>
+			<Column>
+				<Text text="Quantity"></Text>
+			</Column>
+			<Column>
+				<Text text="Current Quantity"></Text>
+			</Column>
+			<Column>
+				<Text text="Actual Price"></Text>
+			</Column>
+			<Column>
+				<Text text="Discounted Price"></Text>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
+					<Input value="" type="number"></Input>
+					<Text text=""></Text>
+					<Text text=""></Text>
+					<Text text=""></Text>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
+					<Input value="" type="number"></Input>
+					<Text text=""></Text>
+					<Text text=""></Text>
+					<Text text=""></Text>
+				</cells>
+			</ColumnListItem>
+			<ColumnListItem>
+				<cells>
+					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
+					<Input value="" type="number"></Input>
+					<Text text=""></Text>
+					<Text text=""></Text>
+					<Text text=""></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<Toolbar>
+		<ToolbarSpacer></ToolbarSpacer>
+		<Button text="Go to Cart" type="Emphasized" icon="sap-icon://cart-5" press="onPurchase"></Button>
+	</Toolbar>
+</core:FragmentDefinition>

@@ -1,0 +1,11 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="cn.par.controller.buyProduct"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
+	<Page title="Make a purchase" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<form:SimpleForm>
+				<Label text="Total Amount to pay"></Label>
+				<Text text="200"></Text>
+			</form:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

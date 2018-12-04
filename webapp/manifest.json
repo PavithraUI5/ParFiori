@@ -49,10 +49,14 @@
 				"pattern": "",
 				"name": "master",
 				"target": ["masterView"]
+			}, {
+				"pattern": "BookAppointment/{Amount}/{Currency}",
+				"name": "appointment",
+				"target": ["appointmentView"]
 			},{
-				"pattern" : "BookAppointment/{Amount}/{Currency}",
-				"name" : "appointment",
-				"target" : ["appointmentView"] 
+				"pattern" : "buyProducts",
+				"name" : "buyProducts",
+				"target" : ["productPurchase"]
 			}],
 			"targets": {
 				"masterView": {
@@ -61,9 +65,15 @@
 					"controlAggregation": "pages",
 					"viewLevel": 1
 				},
-				"appointmentView" : {
+				"appointmentView": {
 					"viewName": "Appointment",
-					"viewId" : "idAppointment",
+					"viewId": "idAppointment",
+					"controlAggregation": "pages",
+					"viewLevel": 2
+				},
+				"productPurchase" : {
+					"viewName" : "buyProduct",
+					"viewId" : "idBuyProduct",
 					"controlAggregation" : "pages",
 					"viewLevel" : 2
 				}
@@ -79,6 +89,12 @@
 				"uri": "/webapp/models/data/internalInfo.json",
 				"preload": true
 			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "/webapp/css/cssStyles.css",
+				"id": ""
+			}]
 		}
 	},
 	"sap.app": {
