@@ -1,8 +1,18 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-	<Table mode="MultiSelect" alternateRowColors="true" selectionChange="onSelectionProducts">
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:link="sap.ui.comp.navpopover">
+	<Toolbar>
+		<ToolbarSpacer></ToolbarSpacer>
+		<Button text="Go to Cart" type="Emphasized" icon="sap-icon://cart-5" press="onPurchase"></Button>
+	</Toolbar>
+	<Toolbar>
+		<Text text="***Please select only one product to view the supplier details and product image***"></Text>
+	</Toolbar>
+	<Table id="idProductTable" items="{/ProductsSet}" mode="MultiSelect" alternateRowColors="true" growing="true" growingThreshold="5" selectionChange="onSelectionProducts">
 		<columns>
 			<Column>
-				<Text text="Product"></Text>
+				<Text text="Product ID"></Text>
+			</Column>
+			<Column>
+				<Text text="Product Name"></Text>
 			</Column>
 			<Column>
 				<Text text="Quantity"></Text>
@@ -18,37 +28,17 @@
 			</Column>
 		</columns>
 		<items>
-			<ColumnListItem>
+			<ColumnListItem id="idColumn">
 				<cells>
-					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
-					<Input value="" type="number"></Input>
-					<Text text=""></Text>
-					<Text text=""></Text>
-					<Text text=""></Text>
-				</cells>
-			</ColumnListItem>
-			<ColumnListItem>
-				<cells>
-					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
-					<Input value="" type="number"></Input>
-					<Text text=""></Text>
-					<Text text=""></Text>
-					<Text text=""></Text>
-				</cells>
-			</ColumnListItem>
-			<ColumnListItem>
-				<cells>
-					<Link text="ABC" emphasized="true" press="onClickDetails"></Link>
-					<Input value="" type="number"></Input>
-					<Text text=""></Text>
-					<Text text=""></Text>
-					<Text text=""></Text>
+					<Link text="{PRODUCT_ID}" emphasized="true" press="onClickDetails"></Link>
+					<!--<link:SmartLink text="{PRODUCT_ID}" contactAnnotationPath="{/ToSupplier}"></link:SmartLink>-->
+					<Link text="{PRODUCT_NAME}" emphasized="true" press="onProductName"></Link>
+					<Input value="0"></Input>
+					<Text text="{AVAILABLE_QTY}"></Text>
+					<Text text="{GROSS_PRICE}"></Text>
+					<Text text="{DISCOUNTED_PRICE}"></Text>
 				</cells>
 			</ColumnListItem>
 		</items>
 	</Table>
-	<Toolbar>
-		<ToolbarSpacer></ToolbarSpacer>
-		<Button text="Go to Cart" type="Emphasized" icon="sap-icon://cart-5" press="onPurchase"></Button>
-	</Toolbar>
 </core:FragmentDefinition>

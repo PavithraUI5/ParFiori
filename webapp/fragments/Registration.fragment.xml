@@ -15,11 +15,11 @@
 		<Label text="Nationality" width="200px"></Label>
 		<Input value="" width="200px"></Input>
 		<Label text="How did you get to know about this Salon?" required="true" width="200px"></Label>
-		<Select selectedKey="{/arrivalStruct/name}" items="{/arrival}" width="200px">
-			<core:Item key="{name}" text="{value}"></core:Item>
+		<Select selectedKey="{jsonModel>/arrivalStruct/name}" items="{jsonModel>/arrival}" width="200px">
+			<core:Item key="{jsonModel>name}" text="{jsonModel>value}"></core:Item>
 		</Select>
 		<Label text="If Others, please mention here" width="200px"></Label>
-		<Input enabled="{= ${/arrivalStruct/name} === 'Others' ? true : false}" width="200px"></Input>
+		<Input enabled="{= ${jsonModel>/arrivalStruct/name} === 'Others' ? true : false}" width="200px"></Input>
 	</form:SimpleForm>
 	<Toolbar style="Clear">
 		<ToolbarSpacer></ToolbarSpacer>

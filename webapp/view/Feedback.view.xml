@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="cn.par.controller.Feedback"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:form="sap.ui.layout.form">
+	<Page title="Feedback Form" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<form:SimpleForm>
+				<Label text="Name" width="200px"></Label>
+				<Input value="{local>/feedbackSubmit/NAME}" width="200px"></Input>
+				<Label text="Email id" width="200px"></Label>
+				<Input value="{local>/feedbackSubmit/EMAIL_ID}" width="200px"></Input>
+				<Label text="Rating" width="200px"></Label>
+				<Input value="{local>/feedbackSubmit/RATING}" width="200px"></Input>
+				<Label text="Comments" width="200px"></Label>
+				<Input value="{local>/feedbackSubmit/COMMENTS}" width="200px"></Input>
+			</form:SimpleForm>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button text="Submit" press="onSubmit"></Button>
+			</Toolbar>
+		</content>
+	</Page>
+</mvc:View>

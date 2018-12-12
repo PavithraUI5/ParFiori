@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-], function(Controller, MessageToast) {
+	"sap/m/MessageToast",
+	"sap/m/MessageBox"
+], function(Controller, MessageToast, MessageBox) {
 	"use strict";
 
 	return Controller.extend("cn.par.controller.Main", {
@@ -14,7 +15,10 @@ sap.ui.define([
 		//oPaths: null,
 		oAmt: 0,
 		oCurr: "",
-		popup: null,
+		productId : null,
+		popImg: null,
+		oTotalPurchaseAmt : 0,
+		aQty: [],
 		onInit: function() {
 			this.oRouter = this.getOwnerComponent().getRouter();
 		},
@@ -24,26 +28,10 @@ sap.ui.define([
 		},
 		onBook: function() {
 			//MessageToast.show("hello");
-			//if (!this.oPaths) {
-			//var oApp = this.getView().getParent();
-			//var oAppointmentView = oApp.getPages()[1];
-			/*var oAppointmentV = sap.ui.view("idAppointment",{
-				viewName : "cn.par.view.Appointment",
-				type : "XML"
-			});*/
-			//oApp.addPage(oAppointmentV);
-			//var oA = oApp.getPages()[1];
-			/*oA.bindElement(this.oPaths);
-			oApp.to(oA);*/
-			//oAppointmentV.bindElement(this.oPaths);
-			//this.oRouter.navTo("appointment");
-
 			this.oRouter.navTo("appointment", {
 				Amount: this.oAmt,
 				Currency: this.oCurr
 			});
-			//oApp.to("idAppoint");
-			//}
 		},
 		onSelectedItems: function() {
 			//MessageToast.show("hello");
@@ -79,18 +67,57 @@ sap.ui.define([
 		onPressRegister: function() {
 
 		},
+		onProductName : function(oEvent){
+			debugger;
+			if(!this.popImg){
+				this.popImg = new sap.ui.xmlfragment("cn.par.fragments.popImage", this);
+				this.getView().addDependent(this.popImg);
+			}
+			
+			var oPath = this.getView().byId("idProductTable").getSelectedItem().getBindingContextPath();
+			this.popImg.bindElement(oPath);
+			this.popImg.openBy(oEvent.getSource());
+		},
 		onClickDetails: function(oEvent) {
-			if(this.popup === null){
+			if(!this.popup){
 				this.popup = new sap.ui.xmlfragment("cn.par.fragments.PopoverData", this);
 				this.getView().addDependent(this.popup);
 			}
+			var path = this.getView().byId("idProductTable").getSelectedItem().getBindingContextPath();
+			path = path.concat("/ToSupplier");
+			this.popup.bindElement(path);
 			this.popup.openBy(oEvent.getSource());
+			//var src = oEvent.getSource();
+			
+			/*this.oRouter.navTo("productDetail",{
+				productId : 
+			});*/
 		},
 		onSelectionProducts : function(){
-			
+			debugger;
+			var oProdTab = this.getView().byId("idProductTable");
+			var oItems = oProdTab.getSelectedItems();
+			var oLength = oItems.length;
+			var i;
+			var localNumber, localQty;
+			var oTotal = 0;
+			for (i = 0; i < oLength; i++) {
+				localNumber = oProdTab.getSelectedItems()[i].getCells()[5].getText();
+				localNumber = parseInt(localNumber);
+				oTotal = localNumber + oTotal;
+				localQty = oProdTab.getSelectedItems()[i].getCells()[2].getValue();
+				this.aQty.push(localQty);
+			}
+			this.oTotalPurchaseAmt = oTotal;
 		},
 		onPurchase : function(){
-			this.oRouter.navTo("buyProducts");
+			MessageBox.confirm("Please confirm if you want to continue for Pay");
+			this.oRouter.navTo("buyProducts",{
+				amount : this.oTotalPurchaseAmt
+			});
+		},
+		onSubmitFeedback : function(){
+			this.oRouter.navTo("Feedback");
 		}
 			/**
 			 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

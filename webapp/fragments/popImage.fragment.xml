@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Popover>
+		<customHeader>
+			<Text text=""></Text>
+		</customHeader>
+		<Image src="{PRODUCT_PIC_URL}" width="200px" densityAware="false"></Image>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,12 +1,12 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:head="cn.par.customControls">
 	
-	<List id="idChoiceList" items="{/choices}" mode="MultiSelect" selectionChange="onSelectedItems">
+	<List id="idChoiceList" items="{/ChoicesSet}" mode="MultiSelect" selectionChange="onSelectedItems">
 		<headerToolbar>
 			<Toolbar style="Clear">
 				<ToolbarSpacer/>
 				<Button type="Emphasized" text="Book an appointment" press="onBook"></Button>
 			</Toolbar>
 		</headerToolbar>
-		<ObjectListItem intro="{category}" icon="{pic}" title="{name}" number="{price}" numberUnit="{unit}"></ObjectListItem>
+		<ObjectListItem intro="{CATEGORY}" icon="{PIC}" title="{NAME}" number="{PRICE}" numberUnit="{UNIT}"></ObjectListItem>
 	</List>
 </core:FragmentDefinition>

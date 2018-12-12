@@ -20,13 +20,13 @@
 	"sap.ui5": {
 		"_version": "1.2.0",
 		"dependencies": {
-			"minUI5Version": "1.44",
+			"minUI5Version": "1.32",
 			"libs": {
 				"sap.m": {
-					"minVersion": "1.44"
+					"minVersion": "1.32"
 				},
 				"sap.ui.core": {
-					"minVersion": "1.44"
+					"minVersion": "1.32"
 				}
 			}
 		},
@@ -54,9 +54,13 @@
 				"name": "appointment",
 				"target": ["appointmentView"]
 			},{
-				"pattern" : "buyProducts",
+				"pattern" : "buyProducts/{amount}",
 				"name" : "buyProducts",
 				"target" : ["productPurchase"]
+			},{
+				"pattern" : "feedback",
+				"name" : "Feedback",
+				"target" : ["feedbackSubmit"]
 			}],
 			"targets": {
 				"masterView": {
@@ -76,18 +80,26 @@
 					"viewId" : "idBuyProduct",
 					"controlAggregation" : "pages",
 					"viewLevel" : 2
+				},
+				"feedbackSubmit" : {
+					"viewName" : "Feedback",
+					"viewId" : "idFeedback",
+					"controlAggregation" : "pages",
+					"viewLevel" : 2
 				}
 			}
 		},
 		"models": {
+			"" : {
+				"dataSource" : "OdataService"
+			},
+			"jsonModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/webapp/models/data/internalInfo.json"
+			},
 			"i18n": {
 				"uri": "/webapp/i18n/i18n.properties",
 				"type": "sap.ui.model.resource.ResourceModel"
-			},
-			"": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "/webapp/models/data/internalInfo.json",
-				"preload": true
 			}
 		},
 		"resources": {
@@ -109,7 +121,16 @@
 		"tags": {
 			"keywords": ["{{SALON}}", "{{BEAUTY}}"]
 		},
-		"ach": "SD"
+		"ach": "SD",
+		"dataSources" : {
+			"OdataService" : {
+				"uri" : "/sap/opu/odata/sap/ZODATA_PAR_SRV/",
+				"type" : "OData",
+				"settings" : {
+					"version" : "2.0"
+				}
+			}
+		}
 	},
 	"_version": "1.6.0"
 }

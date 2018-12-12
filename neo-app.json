@@ -1,0 +1,11 @@
+{
+	"routes": [{
+		"path": "/sap/opu/odata",
+		"target": {
+			"type": "destination",
+			"name": "S4C",
+			"entryPath": "/sap/opu/odata"
+		},
+		"description": "S/4HANA 1809 server"
+	}]
+}

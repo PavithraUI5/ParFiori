@@ -3,8 +3,9 @@
 	<Page title="Make a purchase" showNavButton="true" navButtonPress="onBack">
 		<content>
 			<form:SimpleForm>
-				<Label text="Total Amount to pay"></Label>
-				<Text text="200"></Text>
+				<Text text="Payment Successful" textAlign="Center"></Text>
+				<Label text="Amount Paid" ></Label>
+				<Text id="idTotalProdAmt" ></Text>
 			</form:SimpleForm>
 		</content>
 	</Page>

@@ -13,9 +13,17 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf cn.par.view.buyProduct
 		 */
+		attachValue: function(oParams){
+			debugger;
+			var amountVal = oParams.getParameters().arguments.amount;
+			amountVal = amountVal.concat(" INR");
+			this.getView().byId("idTotalProdAmt").setText(amountVal);
+		},
 		onInit: function() {
+			debugger;
 			//this.oRouter = this.getOwnerComponent.getRouter();
-			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);          
+			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this); 
+			this.oRouter.attachRoutePatternMatched(this.attachValue, this);
 		}
 
 		/**
